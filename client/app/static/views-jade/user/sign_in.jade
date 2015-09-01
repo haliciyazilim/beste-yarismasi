@@ -1,0 +1,9 @@
+.row#main
+    .col-lg-6.center-block
+        form
+            .form-group
+                input.form-control(type='text', ng-model='form.username' placeholder='Kullanıcı Adı')
+            .form-group
+                input.form-control(type='password', ng-model='form.password' placeholder='Şifre')
+            button.btn.btn-default(type='submit' ng-click='login()') GİRİŞ
+            a.btn.btn-default.pull-right(href='kayit') KAYIT

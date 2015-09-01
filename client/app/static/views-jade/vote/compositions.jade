@@ -1,0 +1,48 @@
+// Created by abdullah on 25/08/15.
+
+.row
+    .col-lg-12
+        ul.list-group
+            li.list-group-item(ng-repeat="track in tracks | orderBy:tracksOrder")
+                .row
+                    .col-lg-6
+                        | {{track.owner.firstName}} {{track.owner.lastName}}
+                        br
+                        | {{track.name}}
+                        br
+                        audio(controls, ngf-src='track.url' )
+                        p
+                            button.btn(
+                            ng-class="{'btn-success':track.isQualified, 'btn-danger':!track.isQualified, 'disabled':!user.isSuperuser}",
+                            ng-click='vote(track)' )
+                                i(ng-class="track.isVoteForQualificationOnAction?'fa fa-cog fa-spin':''")
+                                | {{track.isQualified?'Uygun':'Uygun değil'}}
+                            button.btn(
+                            ng-class="{'btn-success':track.isFinalist, 'btn-danger':!track.isFinalist, 'disabled':!user.isSuperuser}",
+                            ng-click='vote(track, true)' ng-show='track.isQualified && user.isSuperuser')
+                                i(ng-class="track.isVoteForFinalOnAction?'fa fa-cog fa-spin':''")
+                                | {{track.isFinalist?'Finalde':'Finalde değil'}}
+
+                    .col-lg-6
+                        .row
+                            .col-lg-12
+                                .form-group
+                                    label Softwares
+                                    ul.list-group
+                                        li.list-group-item(ng-repeat='software in track.softwares')
+                                            | {{software.name}}
+                                .form-group
+                                    label Devices
+                                    ul.list-group
+                                        li.list-group-item(ng-repeat='device in track.devices')
+                                            | {{device.name}}
+                                .form-group
+                                    label Stage Materials
+                                    ul.list-group
+                                        li.list-group-item(ng-repeat='stageMaterial in track.stageMaterials')
+                                            | {{stageMaterial.name}}
+
+
+
+
+

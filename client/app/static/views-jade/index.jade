@@ -1,0 +1,9 @@
+// Created by abdullah on 13/08/15.
+.col-lg-8
+    h3 {{ currentContent.title }}
+    p(ng-bind-html='currentContent.content')
+.col-lg-4
+    div.list-group(ng-show='links')
+    .list-group-item.hand(ng-repeat='item in links' ng-click='getContent(item.link, item.isForStaticContent)') {{ item.title }}
+
+grunt

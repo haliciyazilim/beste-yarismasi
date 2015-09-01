@@ -1,0 +1,33 @@
+.row
+    .col-lg-10
+        form.col-lg-offset-4
+            .form-group
+                input.form-control(type='text', placeholder='Kullanıcı Adı', ng-model='form.username')
+            .form-group
+                input.form-control(type='text', placeholder='İsim', ng-model='form.first_name')
+            .form-group
+                input.form-control(type='text', placeholder='Soyisim', ng-model='form.last_name')
+            .form-group
+                .btn-group(dropdown, is-open='false')
+                    .btn.btn-default(dropdown-toggle) {{ currentGender }}  <span class="caret"></span>
+                    ul.dropdown-menu(role='menu', aria-labelledby='single-button')
+                        li(role='menu-item')
+                            a.hand(ng-click="setGender('Erkek')") Erkek
+                        li(role='menu-item')
+                            a.hand(ng-click="setGender('Kadın')") Kadın
+            .form-group
+                input.form-control(type='email', placeholder='E-mail', ng-model='form.email')
+            .form-group
+                input.form-control(type='tel', placeholder='Telefon', ng-model='form.phone_number')
+            .form-group
+                textarea.form-control(type='text', rows='3', placeholder='Adres', ng-model='form.address')
+            .form-group
+                input.form-control(type='text', placeholder='Şehir', ng-model='form.city')
+            .form-group
+                input.form-control(type='password', placeholder='Şifre', ng-model='form.password')
+            .form-group
+                input.form-control(type='password', placeholder='Şifre Kontrolü', ng-model='form.password_validation')
+            button.btn.btn-warning.pull-right(type='submit' ng-click='signUp()') Tamam
+
+
+

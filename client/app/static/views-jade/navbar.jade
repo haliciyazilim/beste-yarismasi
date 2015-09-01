@@ -1,0 +1,23 @@
+// Created by abdullah on 13/08/15.
+| {% load static from staticfiles %}
+div(ng-controller='NavbarController')
+    img#header(src="{% static 'images/header.jpg' %}", alt="21. TBD - Halıcı Bilgisayarla Beste Yarışması")
+    .row#main
+        | {% verbatim %}
+        .col-lg-12.text-right
+            div(ng-show='user')
+                a(href='profil')
+                    | {{ user.username }}
+                | &nbsp;| &nbsp;
+                button.btn.btn-default(ng-click='logout(user)' type='submit') <i class="fa fa-sign-out"></i>
+            div(ng-show='!user')
+                form.form-inline
+                    .form-group
+                        label.sr-only Kullanıcı Adı
+                        input.form-control(type='text', placeholder='Kullanıcı Adı', ng-model='form.username')
+                    .form-group
+                        label.sr-only Şifre
+                        input.form-control(type='password', placeholder='Şifre', ng-model='form.password')
+                    button.btn.btn-default(ng-click='login()') <i class="fa fa-sign-in"></i>
+                    //i.fa-fa-sign-in
+        | {% endverbatim %}

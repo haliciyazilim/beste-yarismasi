@@ -1,0 +1,53 @@
+// Created by abdullah on 20/08/15.
+
+.row()
+    .col-sm-6.col.xs-12(ng-repeat='track in tracks')
+        form(enctype="multipart/form-data")
+            .form-group
+                label.control-label Eser Adı
+                input.form-control(type='text', placeholder='Eser Adı', ng-model='track.name')
+            .form-group
+                label.control-label Kullanılan Cihazlar
+                //input.form-control(type='text', placeholder='Kullanılan Cihazlar')
+                angucomplete-alt(id="device_list" placeholder="Kişi ara" pause="100"  selected-object="track.onDeviceSelect" local-data="devices"
+                search-fields="name" title-field="name"  input-class="form-control" clear-selected="true"
+                minlength=2 ng-enter="track.onEnter(this.$$childHead, 'device')" ng-if="devices")
+                ul.list-group.scroll-area(style="max-height: 206px;")
+                    li.list-group-item(ng-repeat='device in track.devices' ng-show='device.name.length>0')
+                        | {{device.name}}
+                        i.fa.fa-times.hand.pull-right(ng-click='track.removeSelected($index, "device")')
+
+            .form-group
+                label.control-label Kullanılan Yazılımlar
+                //input.form-control(type='text', placeholder='Kullanılan Yazılımlar')
+                angucomplete-alt(id="software_list" placeholder="Kişi ara" pause="100"  selected-object="track.onSoftwareSelect"
+                local-data="softwares" search-fields="name" title-field="name"  input-class="form-control"
+                clear-selected="true" minlength=2 ng-enter="track.onEnter(this.$$childHead, 'software')"
+                ng-if="softwares")
+                ul.list-group.scroll-area(style="max-height: 206px;")
+                    li.list-group-item(ng-repeat='software in track.softwares')
+                        | {{software.name}}
+                        i.fa.fa-times.hand.pull-right(ng-click='track.removeSelected($index, "software")')
+
+            .form-group
+                label.control-label Sahnede ihtiyaç duyulacak malzememeler
+                //input.form-control(type='text', placeholder='Sahnede ihtiyaç duyulacak malzememeler')
+                angucomplete-alt(id="stage_material_list" placeholder="Kişi ara" pause="100"  selected-object="track.onStageMaterialSelect"
+                local-data="stageMaterials" search-fields="name" title-field="name"  input-class="form-control"
+                clear-selected="true" minlength=2 ng-enter="track.onEnter(this.$$childHead, 'stage')"
+                ng-if="stageMaterials")
+                ul.list-group.scroll-area(style="max-height: 206px;")
+                    li.list-group-item(ng-repeat='stageMaterial in track.stageMaterials')
+                        | {{stageMaterial.name}}
+                        i.fa.fa-times.hand.pull-right(ng-click='track.removeSelected($index, "stage")')
+        .row
+            .col-xs-12.col-sm-3.col-lg-3
+                button.btn.btn-default.form-control(ngf-select, ngf-change='upload($file, track)',
+                ngf-multiple=false, accept="audio/*" ngf-pattern='audio/*') Eser Yükle
+            .col-xs-12.coll.sm-9.col-lg-9
+                audio(controls, ngf-src='track.file || track.url' )
+            //audio(controls, ngf-src='track.file || track.url' ng-show='track.file')
+            //audio(controls, ngf-src='track.url' ng-show='!track.file && track.url')
+        .row
+            .form-group
+                button.btn.btn-success.pull-right(ng-click='createOrUpdate(track)') Güncelle

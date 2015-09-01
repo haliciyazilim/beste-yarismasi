@@ -16,4 +16,4 @@ def home(request):
         })
     }
 
-    return render(request, 'index.html', context)
+    return render(request, 'main.html', context)

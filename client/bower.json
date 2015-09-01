@@ -1,19 +1,36 @@
 {
-  "name": "client",
-  "version": "0.0.0",
+  "name": "grunt",
+  "version": "0.1.0",
+  "authors": [
+    "Abdullah Karacabey <abdullahkaracabey@gmail.com>"
+  ],
+  "description": "Grunt deneme",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "grunt",
+    "deneme"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
   "dependencies": {
-    "angular": "^1.4.1",
-    "json3": "^3.3.0",
-    "es5-shim": "^4.1.1",
+    "angucomplete-alt": "~1.1.0",
+    "angular": "~1.4.3",
+    "angular-bootstrap": "~0.13.3",
+    "angular-route": "~1.4.3",
+    "aws-sdk-js": "~2.1.34",
     "bootstrap-sass-official": "^3.3.4",
-    "angular-animate": "^1.4.1",
-    "angular-aria": "^1.4.1",
-    "angular-cookies": "^1.4.1",
-    "angular-messages": "^1.4.1",
-    "angular-sanitize": "^1.4.1",
-    "angular-touch": "^1.4.1",
-    "restangular": "~1.5.1",
-    "angular-ui-router": "~0.2.10"
+    "font-awesome": "fontawesome#~4.4.0",
+    "ng-file-upload": "~7.0.6",
+    "ngstorage": "~0.3.7",
+    "restangular": "~1.5.1"
   },
   "devDependencies": {
     "angular-mocks": "~1.4.1",

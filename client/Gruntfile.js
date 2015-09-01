@@ -199,7 +199,7 @@ module.exports = function (grunt) {
     // concat, minify and revision files. Creates configurations in memory so
     // additional tasks can operate on them
     useminPrepare: {
-      html: '<%= yeoman.app %>/index.html',
+      html: '<%= yeoman.app %>/main.html',
       options: {
         dest: '<%= yeoman.dist %>',
         flow: {
@@ -301,6 +301,18 @@ module.exports = function (grunt) {
           expand: true,
           cwd: '<%= yeoman.app %>',
           src: 'static/bower_components/bootstrap-sass-official/assets/fonts/bootstrap/*',
+          dest: '<%= yeoman.dist %>'
+        },
+         {
+          expand: true,
+          cwd: '<%= yeoman.app %>',
+          src: 'static/bower_components/font-awesome/fonts/*',
+          dest: '<%= yeoman.dist %>'
+        },
+        {
+          expand: true,
+          cwd: '<%= yeoman.app %>',
+          src: 'static/bower_components/angucomplete-alt/angucomplete-alt.css',
           dest: '<%= yeoman.dist %>'
         }]
       },

@@ -1,0 +1,23 @@
+// Created by abdullah on 11/08/15.
+
+.row()
+    .col-lg-6
+        .panel.panel-default
+            .panel-heading İsim, Soyisim
+            .panel-body {{ user.first_name }} {{ user.last_name }}
+        .panel.panel-default
+            .panel-heading E-Mail
+            .panel-body {{ user.email }}
+        .panel.panel-default
+            .panel-heading Telefon
+            .panel-body {{ user.phone_number }}
+    .col-lg-6
+        button.btn.btn-info Bilgileri Güncelle
+        a.btn.btn-info(href='{{user.username}}/eserler') Şarkı Yükle
+        a.btn.btn-info(href='eserler', ng-show(user.isSuperuser)) Tüm Eserleri Listele
+
+
+
+
+
+

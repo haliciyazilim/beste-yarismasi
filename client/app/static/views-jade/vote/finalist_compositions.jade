@@ -1,0 +1,16 @@
+// Created by abdullah on 25/08/15.
+.row
+    .col-lg-12
+        ul.list-group
+            li.list-group-item(ng-repeat="track in tracks")
+                .row
+                    .col-lg-3
+                        | {{track.owner.firstName}} {{track.owner.lastName}}
+                        br
+                        | {{track.name}}
+                    .col-lg-5
+                        audio(controls, ngf-src='track.url' )
+                    .col-lg-4
+                        rating(ng-model="track.rate" max="ratingMax"  state-on="'fa fa-star'" state-off="'fa fa-star-o'" ng-click='vote(track)')
+
+
