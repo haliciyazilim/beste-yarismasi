@@ -77,7 +77,6 @@ server/.env
 
 # Client
 client/node_modules
-client/app/**/*.html
 client/dist
 client/.tmp
 client/.sass-cache

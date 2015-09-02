@@ -1,0 +1,28 @@
+<!-- Created by abdullah on 11/08/15.-->
+<div class="row">
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                İsim, Soyisim
+            </div>
+            <div class="panel-body">
+                {{ user.firstName }} {{ user.lastName }}
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">E-Mail</div>
+            <div class="panel-body">
+                {{ user.email }}
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">Telefon</div>
+            <div class="panel-body">{{ user.phoneNumber }}</div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <button class="btn btn-info">Bilgileri Güncelle</button>
+        <a href="{{user.username}}/eserler" class="btn btn-info">Şarkı Yükle</a>
+        <a href="eserler" ng-show="user.isSuperuser" class="btn btn-info">Tüm Eserleri Listele</a>
+    </div>
+</div>

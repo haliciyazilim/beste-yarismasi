@@ -1,0 +1,71 @@
+<!-- Created by abdullah on 13/08/15.-->
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Halıcı Beste Yarışması">
+{#        <link rel="stylesheet" href="{% static 'styles/lib.css' %}">#}
+{#        <link rel="stylesheet" href="{% static 'styles/app.css' %}">#}
+        <!-- build:css(.tmp) static/styles/main.css -->
+         <link rel="stylesheet" href="/static/styles/main.css">
+         <link rel="stylesheet" href="/static/bower_components/angucomplete-alt/angucomplete-alt.css">
+        <!-- endbuild -->
+        <title> Halıcı Beste Yarışması</title>
+    </head>
+    <body ng-app="besteApp">
+        <div class="container content">
+{#            {% include 'navbar.html' %}#}
+            <div ng-include="'/static/views/navbar.html'"></div>
+            <div id="main" class="row ng-view">
+
+            </div>
+            <div class="footer text-center">
+                <img id="footer" src="/static/images/footer.jpg" alt="21. TBD - Halıcı Bilgisayarla Beste Yarışması">
+            </div>
+        </div>
+
+    <!-- build:js(app) static/scripts/vendor.js -->
+        <script src="/static/bower_components/angular/angular.js"></script>
+        <script src="/static/bower_components/jquery/dist/jquery.js"></script>
+        <script src="/static/bower_components/angular-route/angular-route.js"></script>
+        <script src="/static/bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+        <script src="/static/bower_components/angucomplete-alt/angucomplete-alt.js"></script>
+        <script src="/static/bower_components/aws-sdk-js/dist/aws-sdk.js"></script>
+        <script src="/static/bower_components/ngstorage/ngStorage.js"></script>
+        <script src="/static/bower_components/ng-file-upload/ng-file-upload.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js({.tmp,app}) static/scripts/scripts.js -->
+        <script src="/static/scripts/app.js"></script>
+
+        <script src="/static/scripts/enums/user_role.js"></script>
+
+        <script src="/static/scripts/lib/extensions/object_extensions.js"></script>
+        <script src="/static/scripts/lib/extensions/string_extensions.js"></script>
+
+        <script src="/static/scripts/service/api_url.js"></script>
+        <script src="/static/scripts/service/request_service.js"></script>
+        <script src="/static/scripts/service/authorization.js"></script>
+        <script src="/static/scripts/service/contents_web_service.js"></script>
+        <script src="/static/scripts/service/track_web_service.js"></script>
+        <script src="/static/scripts/service/contest_web_service.js"></script>
+
+        <script src="/static/scripts/controller/navbar.controller.js"></script>
+        <script src="/static/scripts/controller/index.controller.js"></script>
+
+        <script src="/static/scripts/controller/user/profile.controller.js"></script>
+        <script src="/static/scripts/controller/user/signin.controller.js"></script>
+        <script src="/static/scripts/controller/user/signup.controller.js"></script>
+        <script src="/static/scripts/controller/user/tracksController.js"></script>
+
+        <script src="/static/scripts/controller/vote/compositions.controller.js"></script>
+        <script src="/static/scripts/controller/vote/finalist_compositions.controller.js"></script>
+
+        <script src="/static/scripts/controller/contest/contests.controller.js"></script>
+        <script src="/static/scripts/controller/contest/contest.controller.js"></script>
+
+    <!-- endbuild -->
+    </body>
+</html>
