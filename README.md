@@ -1,21 +1,7 @@
-djng
+Beste Yarışması
 ====
 
-[![Join the chat at https://gitter.im/djng/djng](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/djng/djng?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-Kick-start your Django and AngularJS based web applications in minutes.
-Your project will be deployed on Heroku so you can focus on building apps and not infrastructure.
-
-The project provides a minimal set of useful libraries to get you started as quickly as possible.
-Specific topics are covered by [recipes](https://github.com/djng/djng/wiki).
-
-What you get:
-
- * Django backend providing a [REST API](http://www.django-rest-framework.org/).
- * AngularJS client including [Restangular](https://github.com/mgonto/restangular) and [UI Router](http://angular-ui.github.io/ui-router/site/#/api/ui.router).
- * Architecture following the [the twelve-factor app methodology](http://12factor.net/).
- * Configured Heroku environment including logging and monitoring.
- * Everything is built on Heroku - No need to commit build artifacts to your repository.
 
 Prerequisites
 -------------
@@ -30,13 +16,6 @@ Prerequisites
  * Installed [Heroku Toolbelt](https://toolbelt.heroku.com/).
  * A Heroku user account. [Signup is free and instant](https://signup.heroku.com/signup/dc).
 
-Bootstrap your project
-----------------------
-
-	mkdir myproject && cd $_
-    wget -qO- https://raw.githubusercontent.com/djng/djng-init/master/djng.sh | bash
-    
-_Make sure you like what's inside [djng.sh](https://raw.githubusercontent.com/djng/djng-init/master/djng.sh)._
 
 Developing
 ----------
